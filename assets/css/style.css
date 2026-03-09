@@ -1,0 +1,104 @@
+:root {
+    --primary: #00D1FF;
+    --secondary: #00FFAA;
+    --bg: #0A0A0B;
+}
+
+body {
+    background-color: var(--bg);
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-x: hidden;
+}
+
+/* Themes */
+body.theme-forest { --primary: #74b48c; --bg: #0D120F; }
+body.theme-altitude { --primary: #0F172A; --bg: #F8FAFC; color: #0F172A; }
+
+.text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--primary);
+    opacity: 0.7;
+}
+
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+/* The Focal Zoom Transition Idea */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.glass-card:hover {
+    transform: scale(1.02) translateY(-5px);
+    border-color: var(--primary);
+}
+
+.skill-pill {
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 100px;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    font-family: 'JetBrains Mono';
+}
+
+/* Command Dial Styling */
+.command-dial {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+}
+
+.dial-orb {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid var(--primary);
+    background: rgba(0,0,0,0.5);
+    color: var(--primary);
+    cursor: pointer;
+    box-shadow: 0 0 20px var(--primary);
+}
+
+.dial-menu {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dial-menu.active { display: flex; }
+
+.dial-item {
+    background: var(--bg);
+    padding: 10px 20px;
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    font-size: 12px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* Background Animation */
+.elevation-scan {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    box-shadow: 0 0 15px var(--primary);
+    animation: scan 4s linear infinite;
+    opacity: 0.2;
+}
+
+@keyframes scan {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
