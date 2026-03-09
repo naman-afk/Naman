@@ -1,75 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-aurora">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Namandeep Kaur | AI & GIS Engineer</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namandeep Kaur — AI & GIS Engineer</title>
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body class="theme-dark">
-    <div class="topo-grid"></div>
-    <div class="elevation-scan"></div>
 
-    <main id="main-content" class="relative z-10">
-        <section class="min-h-screen flex flex-col justify-center px-6 max-w-6xl mx-auto">
-            <div class="coords-display mb-4">
-                <div class="coord-line">49.2827° N, 123.1207° W // SFU NODE</div>
-                <div class="coord-line">49.0504° N, 122.3045° W // LANGLEY NEXUS</div>
-            </div>
-            <h1 class="text-6xl md:text-8xl font-bold text-white tracking-tighter mb-4">
-                NAMANDEEP<br><span class="text-outline">KAUR</span>
-            </h1>
-            <p class="mono text-cyan-400 tracking-widest text-sm md:text-lg">
-                AI ENGINEER • GIS SPECIALIST • FULL STACK
-            </p>
-        </section>
+<body class="bg-gradient-to-br from-bg1 to-bg2 text-white overflow-x-hidden">
 
-        <section class="px-6 py-20 max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="project-grid">
-                <div class="glass-card border-ai p-8 rounded-3xl" data-category="ai">
-                    <div class="icon-ai mb-6">/* AI_CORE */</div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Neural Vision</h3>
-                    <p class="text-gray-400 mb-6">Object detection on satellite imagery using custom YOLO architectures.</p>
-                    <div class="flex gap-2">
-                        <span class="skill-pill">PyTorch</span>
-                        <span class="skill-pill">CUDA</span>
-                    </div>
-                </div>
-                <div class="glass-card border-gis p-8 rounded-3xl" data-category="gis">
-                    <div class="icon-gis mb-6">/* GEO_SPATIAL */</div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Terrain Hub</h3>
-                    <p class="text-gray-400 mb-6">LiDAR processing and urban heat-map analysis for city planning.</p>
-                    <div class="flex gap-2">
-                        <span class="skill-pill">PostGIS</span>
-                        <span class="skill-pill">ArcGIS</span>
-                    </div>
-                </div>
-                <div class="glass-card border-fullstack p-8 rounded-3xl" data-category="life">
-                    <div class="icon-fullstack mb-6">/* VITAL_LOGS */</div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Life Latitudes</h3>
-                    <p class="text-gray-400 mb-6">Optimizing physical core logic through Pilates and BC trail navigation.</p>
-                    <div class="flex gap-2">
-                        <span class="skill-pill">Pilates</span>
-                        <span class="skill-pill">Hiking</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- Floating Nav Toggle -->
+    <button id="navToggle" class="nav-toggle">☰</button>
 
-    <div class="command-dial">
-        <button class="dial-orb" id="dialTrigger">
-            <span class="mono">CMD</span>
-        </button>
-        <div class="dial-menu" id="dialMenu">
-            <div class="dial-item" onclick="setTheme('dark')">SYSTEM_OBSIDIAN</div>
-            <div class="dial-item" onclick="setTheme('forest')">BIOPHILIC_MOSS</div>
-            <div class="dial-item" onclick="setTheme('altitude')">SKY_ELEVATION</div>
-        </div>
+    <!-- Radial Menu -->
+    <div id="radialMenu" class="radial-menu hidden">
+        <a href="#projects">Projects</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#contact">Contact</a>
     </div>
 
-    <script src="assets/js/script.js"></script>
+    <!-- Theme Switcher -->
+    <div id="themeSwitcher" class="theme-switcher">
+        <button data-theme="aurora"></button>
+        <button data-theme="midnight"></button>
+        <button data-theme="forest"></button>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-glow"></div>
+
+        <h1 class="hero-title">NAMANDEEP KAUR</h1>
+        <p class="hero-subtitle">AI ENGINEER • GIS SPECIALIST • FULL STACK DEVELOPER</p>
+
+        <p class="hero-tagline">
+            Building intelligent systems at the intersection of machine learning,
+            geospatial analysis, and modern web architecture.
+        </p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+        <h2 class="section-title">PROJECTS</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Example Card -->
+            <div class="glass-card hover-magnet">
+                <h3 class="card-title">Neural Vision Engine</h3>
+                <p class="card-text">
+                    Real-time object detection using custom YOLO architecture.
+                </p>
+            </div>
+
+            <div class="glass-card hover-magnet">
+                <h3 class="card-title">GeoSpatial Analytics Hub</h3>
+                <p class="card-text">
+                    Multi-layer terrain analysis platform for urban planning.
+                </p>
+            </div>
+
+            <div class="glass-card hover-magnet">
+                <h3 class="card-title">DataStream Dashboard</h3>
+                <p class="card-text">
+                    Real-time analytics platform with WebSocket streaming.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section id="expertise" class="section">
+        <h2 class="section-title">EXPERTISE MATRIX</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-card hover-magnet">
+                <h3 class="card-title">Machine Learning</h3>
+                <p class="card-text">PyTorch, TensorFlow, Scikit-Learn, MLflow</p>
+            </div>
+
+            <div class="glass-card hover-magnet">
+                <h3 class="card-title">Geospatial</h3>
+                <p class="card-text">PostGIS, QGIS, GEE, Mapbox</p>
+            </div>
+
+            <div class="glass-card hover-magnet">
+                <h3 class="card-title">Cloud & DevOps</h3>
+                <p class="card-text">AWS, Docker, Terraform, GitHub Actions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOBBIES -->
+    <section id="hobbies" class="section">
+        <h2 class="section-title">BEYOND THE TERMINAL</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-card hover-magnet">
+                <h3 class="card-title">Nature</h3>
+                <p class="card-text">Hiking, sunsets, forests, grounding.</p>
+            </div>
+
+            <div class="glass-card hover-magnet">
+                <h3 class="card-title">Pilates</h3>
+                <p class="card-text">Mind-body balance & strength.</p>
+            </div>
+
+            <div class="glass-card hover-magnet">
+                <h3 class="card-title">Gym</h3>
+                <p class="card-text">Discipline, routine, and growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <footer id="contact" class="footer">
+        <p>© 2024 NAMANDEEP KAUR — All Systems Operational</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
