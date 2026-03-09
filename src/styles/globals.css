@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme tokens */
+:root {
+  --bg: 120 10% 6%;
+  --fg: 120 10% 96%;
+  --muted: 120 6% 70%;
+  --border: 120 10% 18%;
+  --primary: 84 85% 55%;
+  --accent: 160 70% 55%;
+}
+
+.altitude {
+  --bg: 140 25% 96%;
+  --fg: 140 20% 10%;
+  --muted: 140 10% 35%;
+  --border: 140 15% 85%;
+  --primary: 84 70% 40%;
+  --accent: 160 55% 35%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-background text-foreground font-inter antialiased;
+}
+
+/* Cyber-glass primitives */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+.altitude .glass {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(10, 15, 11, 0.08);
+}
+
+.glass-hover {
+  transition: transform 300ms ease, background 300ms ease, border-color 300ms ease;
+}
+
+.glass-hover:hover {
+  transform: translateY(-4px);
+}
+
+/* Subtle grid + glow */
+.bg-grid {
+  background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.altitude .bg-grid {
+  background-image: linear-gradient(to right, rgba(10,15,11,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10,15,11,0.06) 1px, transparent 1px);
+}
