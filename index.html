@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namandeep Kaur | AI & GIS Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="theme-dark">
+    <div class="topo-grid"></div>
+    <div class="elevation-scan"></div>
+
+    <main id="main-content" class="relative z-10">
+        <section class="min-h-screen flex flex-col justify-center px-6 max-w-6xl mx-auto">
+            <div class="coords-display mb-4">
+                <div class="coord-line">49.2827° N, 123.1207° W // SFU NODE</div>
+                <div class="coord-line">49.0504° N, 122.3045° W // LANGLEY NEXUS</div>
+            </div>
+            <h1 class="text-6xl md:text-8xl font-bold text-white tracking-tighter mb-4">
+                NAMANDEEP<br><span class="text-outline">KAUR</span>
+            </h1>
+            <p class="mono text-cyan-400 tracking-widest text-sm md:text-lg">
+                AI ENGINEER • GIS SPECIALIST • FULL STACK
+            </p>
+        </section>
+
+        <section class="px-6 py-20 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="project-grid">
+                <div class="glass-card border-ai p-8 rounded-3xl" data-category="ai">
+                    <div class="icon-ai mb-6">/* AI_CORE */</div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Neural Vision</h3>
+                    <p class="text-gray-400 mb-6">Object detection on satellite imagery using custom YOLO architectures.</p>
+                    <div class="flex gap-2">
+                        <span class="skill-pill">PyTorch</span>
+                        <span class="skill-pill">CUDA</span>
+                    </div>
+                </div>
+                <div class="glass-card border-gis p-8 rounded-3xl" data-category="gis">
+                    <div class="icon-gis mb-6">/* GEO_SPATIAL */</div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Terrain Hub</h3>
+                    <p class="text-gray-400 mb-6">LiDAR processing and urban heat-map analysis for city planning.</p>
+                    <div class="flex gap-2">
+                        <span class="skill-pill">PostGIS</span>
+                        <span class="skill-pill">ArcGIS</span>
+                    </div>
+                </div>
+                <div class="glass-card border-fullstack p-8 rounded-3xl" data-category="life">
+                    <div class="icon-fullstack mb-6">/* VITAL_LOGS */</div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Life Latitudes</h3>
+                    <p class="text-gray-400 mb-6">Optimizing physical core logic through Pilates and BC trail navigation.</p>
+                    <div class="flex gap-2">
+                        <span class="skill-pill">Pilates</span>
+                        <span class="skill-pill">Hiking</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="command-dial">
+        <button class="dial-orb" id="dialTrigger">
+            <span class="mono">CMD</span>
+        </button>
+        <div class="dial-menu" id="dialMenu">
+            <div class="dial-item" onclick="setTheme('dark')">SYSTEM_OBSIDIAN</div>
+            <div class="dial-item" onclick="setTheme('forest')">BIOPHILIC_MOSS</div>
+            <div class="dial-item" onclick="setTheme('altitude')">SKY_ELEVATION</div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
