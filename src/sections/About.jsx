@@ -5,15 +5,12 @@ export default function About() {
 
       <div className="glass rounded-2xl p-8 leading-relaxed text-muted">
         <p className="mb-4">
-          I’m an engineer who enjoys working close to the fundamentals —
-          understanding how systems behave, where they break, and how to make
-          them reliable under real constraints.
+          Hello,
+            I've always been obsessed with how things work under the hood. It's why I didn't just learn code but built systems from scratch. To me, "good enough" code isn't enough-I want to ensure data integrity and system resilience at the architectural level.
+
         </p>
         <p>
-          My work spans machine learning, geospatial analysis, and systems
-          programming. I’m especially interested in problems where correctness,
-          interpretability, and long‑term maintainability matter more than
-          surface‑level performance.
+          Moving from Germany to Canada to study at SFU gave me a global perspective, but my focus remains technical and grounded. I split my time between AI/ML Engineering- like architecting Multi-Agent RL platforms-and Geospatial Data Science, where I use ArcGIS and Python to model real-world risks like environmental contamination or urban crime patterns.
         </p>
       </div>
     </section>

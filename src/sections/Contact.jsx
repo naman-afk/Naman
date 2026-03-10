@@ -1,18 +1,26 @@
 export default function Contact() {
   return (
-    <section id="contact" className="py-32 px-6 max-w-3xl mx-auto text-center">
-      <h2 className="text-4xl font-poppins font-bold mb-6">Contact</h2>
+    <section
+      id="contact"
+      className="py-32 px-6 max-w-3xl mx-auto text-center relative z-10"
+    >
+      <h2 className="text-4xl font-poppins font-bold mb-6">
+        Get in Touch
+      </h2>
 
-      <p className="text-muted mb-8">
-        Open to remote opportunities, research collaborations, and thoughtful
-        engineering work.
+      <p className="text-muted mb-10 leading-relaxed">
+        <span className="block font-semibold text-foreground mb-2">
+          Let’s Build Something
+        </span>
+        Have a project in mind? I’d love to hear about it. Drop me a message and
+        let’s explore how we can create something together.
       </p>
 
       <a
-        href="mailto:your.email@example.com"
-        className="inline-block px-6 py-3 rounded-xl bg-primary text-black font-semibold"
+        href="mailto:nka87@sfu.ca"
+        className="inline-block px-8 py-4 rounded-xl bg-primary text-black font-semibold"
       >
-        Get in touch
+        Contact Me
       </a>
     </section>
   );
