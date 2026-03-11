@@ -2,26 +2,23 @@ import { skills } from "../data/skills";
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-32 px-6 max-w-6xl mx-auto">
-      <h2 className="text-4xl font-poppins font-bold mb-12">Skills</h2>
+    <section id="skills" className="space-y-12">
+      {skills.map(({ category, items }) => (
+        <div key={category}>
+          <h3 className="text-xl font-semibold mb-4">{category}</h3>
 
-      <div className="grid md:grid-cols-2 gap-6">
-        {Object.entries(skills).map(([group, items]) => (
-          <div key={group} className="glass rounded-2xl p-6">
-            <h3 className="font-poppins font-semibold mb-4">{group}</h3>
-            <div className="flex flex-wrap gap-2">
-              {items.map((s) => (
-                <span
-                  key={s}
-                  className="px-3 py-1 rounded-lg text-sm bg-primary/10 text-primary"
-                >
-                  {s}
-                </span>
-              ))}
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+            {items.map((skill) => (
+              <span
+                key={skill}
+                className="px-3 py-1.5 rounded-lg bg-green-600/20 text-green-400 border border-green-600/40 text-sm"
+              >
+                {skill}
+              </span>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </section>
   );
 }

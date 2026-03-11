@@ -2,81 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Theme tokens */
+/* Theme variables */
 :root {
-  --bg: 120 10% 6%;
-  --fg: 120 10% 96%;
-  --muted: 120 6% 70%;
-  --border: 120 10% 18%;
-  --primary: 84 85% 55%;
-  --accent: 160 70% 55%;
+  --bg: 0 0% 6%;
+  --fg: 0 0% 96%;
+  --muted: 0 0% 60%;
+  --border: 0 0% 25%;
+  --primary: 83 78% 55%;
+  --accent: 200 90% 60%;
 }
 
-.altitude {
-  --bg: 140 25% 96%;
-  --fg: 140 20% 10%;
-  --muted: 140 10% 35%;
-  --border: 140 15% 85%;
-  --primary: 84 70% 40%;
-  --accent: 160 55% 35%;
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
 }
 
-html,
+/* Background grid pattern */
 body {
-  height: 100%;
+  background-color: hsl(var(--bg));
+  background-image:
+    linear-gradient(rgba(246, 243, 243, 0.178) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(210, 207, 207, 0.541) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-body {
-  @apply bg-background text-foreground font-inter antialiased;
-}
-
-/* Cyber-glass primitives */
+/* Glass effect */
 .glass {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.altitude .glass {
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(10, 15, 11, 0.08);
+/* Texture overlay */
+.texture-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("/noise.png");
+  opacity: 0.06;
+  z-index: 1;
 }
 
-.glass-hover {
-  transition: transform 300ms ease, background 300ms ease, border-color 300ms ease;
+/* Topography background lines */
+.topo-lines {
+  background-image: url("/topo.svg");
+  background-size: cover;
+  opacity: 0.25;
+  pointer-events: none;
 }
 
-.glass-hover:hover {
-  transform: translateY(-4px);
-}
-
-/* Subtle grid + glow */
-.bg-grid {
-  background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
-
-.altitude .bg-grid {
-  background-image: linear-gradient(to right, rgba(10,15,11,0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(10,15,11,0.06) 1px, transparent 1px);
-}
-.texture-overlay {
-  background-image:
-    linear-gradient(90deg, rgba(163, 230, 53, 0.03) 1px, transparent 1px),
-    linear-gradient(rgba(163, 230, 53, 0.03) 1px, transparent 1px),
-    radial-gradient(ellipse at 20% 50%, rgba(45, 212, 191, 0.04) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(163, 230, 53, 0.03) 0%, transparent 50%),
-    radial-gradient(ellipse at 60% 80%, rgba(45, 212, 191, 0.03) 0%, transparent 40%);
-  background-size: 60px 60px, 60px 60px, 100% 100%, 100% 100%, 100% 100%;
-}
-
-.texture-circuit {
-  background-image:
-    linear-gradient(90deg, rgba(163, 230, 53, 0.04) 1px, transparent 1px),
-    linear-gradient(rgba(163, 230, 53, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(45, 212, 191, 0.02) 1px, transparent 1px),
-    linear-gradient(rgba(45, 212, 191, 0.02) 1px, transparent 1px);
-  background-size: 80px 80px, 80px 80px, 20px 20px, 20px 20px;
+/* Remove leftover globe styles */
+.globe-center,
+.globe-docked,
+.globe-core,
+.globe-orbit,
+.globe-node,
+.globe-radial-wrapper,
+.globe-radial,
+.globe-ray {
+  display: none !important;
 }

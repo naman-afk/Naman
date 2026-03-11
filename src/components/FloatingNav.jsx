@@ -46,19 +46,16 @@ export default function FloatingNav({ theme, setTheme }) {
             <button
               onClick={() => setTheme("forest")}
               className={`px-4 py-2 rounded-full text-sm ${
-                theme === "forest"
-                  ? "bg-primary text-black"
-                  : "text-muted"
+                theme === "forest" ? "bg-primary text-black" : "text-muted"
               }`}
             >
               <TreePine size={14} /> Forest
             </button>
+
             <button
               onClick={() => setTheme("altitude")}
               className={`px-4 py-2 rounded-full text-sm ${
-                theme === "altitude"
-                  ? "bg-primary text-black"
-                  : "text-muted"
+                theme === "altitude" ? "bg-primary text-black" : "text-muted"
               }`}
             >
               <Sun size={14} /> Altitude

@@ -24,7 +24,7 @@ export default function Hero() {
         </p>
 
         <p className="text-muted text-lg md:text-xl leading-relaxed">
-          Artificial Intelligence • Geospatial Systems • Software Engineering
+          Artificial Intelligence · Geospatial Systems · Software Engineering
         </p>
       </div>
     </section>

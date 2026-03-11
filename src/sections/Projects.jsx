@@ -2,125 +2,128 @@ import { useState } from "react";
 import { projects } from "../data/projects";
 import { motion, AnimatePresence } from "framer-motion";
 
-const filters = ["All", "AI/ML", "GIS", "Systems", "Software"];
-
 export default function Projects() {
-  const [activeFilter, setActiveFilter] = useState("All");
-  const [activeProject, setActiveProject] = useState(null);
+  const [active, setActive] = useState(null);
+  const [filter, setFilter] = useState("All");
 
-  const visibleProjects =
-    activeFilter === "All"
+  const categories = ["All", "AI/ML", "GIS", "Systems", "Software"];
+
+  const filteredProjects =
+    filter === "All"
       ? projects
-      : projects.filter((p) => p.category === activeFilter);
+      : projects.filter((p) => p.category === filter);
 
   return (
-    <section id="projects" className="py-32 px-6 max-w-7xl mx-auto relative">
-      <h2 className="text-4xl font-poppins font-bold mb-10">Projects</h2>
+    <section id="projects" className="space-y-6">
 
       {/* Filter Bar */}
-      <div className="flex flex-wrap gap-3 mb-12">
-        {filters.map((filter) => (
+      <div className="flex flex-wrap gap-3 mb-6">
+        {categories.map((cat) => (
           <button
-            key={filter}
-            onClick={() => setActiveFilter(filter)}
-            className={`px-4 py-2 rounded-full text-sm transition ${
-              activeFilter === filter
-                ? "bg-primary text-black"
-                : "glass text-muted hover:text-foreground"
+            key={cat}
+            onClick={() => setFilter(cat)}
+            className={`px-4 py-1.5 rounded-full text-sm border transition ${
+              filter === cat
+                ? "bg-primary text-black border-primary"
+                : "border-muted text-muted hover:text-foreground"
             }`}
           >
-            {filter}
+            {cat}
           </button>
         ))}
       </div>
 
       {/* Project Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {visibleProjects.map((project) => (
-          <motion.div
+      <div className="grid gap-4 md:grid-cols-2">
+        {filteredProjects.map((project) => (
+          <motion.button
             key={project.id}
-            layoutId={`project-${project.id}`}
-            onClick={() => setActiveProject(project)}
-            className="glass glass-hover rounded-2xl p-6 cursor-pointer"
+            onClick={() => setActive(project)}
+            className="glass rounded-xl p-4 text-left"
+            whileHover={{ scale: 1.02 }}
           >
-            <project.icon className="w-6 h-6 text-primary mb-4" />
+            <p className="text-sm text-muted mb-1">{project.category}</p>
+            <h3 className="text-base font-semibold">{project.title}</h3>
 
-            <h3 className="font-poppins font-semibold text-lg mb-2">
-              {project.title}
-            </h3>
-
-            <p className="text-muted text-sm mb-4">
-              {project.overview}
-            </p>
-
-            <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
+            {/* Tech Pills */}
+            <div className="flex flex-wrap gap-2 mt-3">
+              {project.tags?.map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary"
+                  className="px-2 py-0.5 text-xs rounded-md bg-green-600/20 text-green-400 border border-green-600/40"
                 >
                   {tag}
                 </span>
               ))}
             </div>
-          </motion.div>
+
+            <p className="text-sm text-muted mt-3 line-clamp-3">
+              {project.overview}
+            </p>
+          </motion.button>
         ))}
       </div>
 
-      {/* Project Modal */}
+      {/* Modal */}
       <AnimatePresence>
-        {activeProject && (
+        {active && (
           <motion.div
-            className="fixed inset-0 z-50 bg-background/80 backdrop-blur-xl flex items-center justify-center p-6"
-            onClick={() => setActiveProject(null)}
+            className="fixed inset-0 z-40 flex items-center justify-center bg-black/60"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            onClick={() => setActive(null)}
           >
             <motion.div
-              layoutId={`project-${activeProject.id}`}
-              className="glass rounded-2xl max-w-3xl w-full p-8"
+              className="glass max-w-xl w-full mx-4 rounded-2xl p-6"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <h3 className="text-2xl font-poppins font-bold mb-4">
-                {activeProject.title}
-              </h3>
+              <p className="text-sm text-muted mb-1">{active.category}</p>
+              <h3 className="text-xl font-semibold mb-4">{active.title}</h3>
 
-              <p className="text-muted mb-6">
-                {activeProject.overview}
-              </p>
-
-              <div className="space-y-4 text-sm text-muted">
-                <div>
-                  <strong className="text-foreground">Problems</strong>
-                  <ul className="list-disc list-inside mt-1">
-                    {activeProject.problems.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <strong className="text-foreground">Solutions</strong>
-                  <ul className="list-disc list-inside mt-1">
-                    {activeProject.solutions.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <p>
-                  <strong className="text-foreground">Outcome:</strong>{" "}
-                  {activeProject.outcome}
-                </p>
+              {/* Tech Pills in Modal */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {active.tags?.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-2 py-0.5 text-xs rounded-md bg-green-600/20 text-green-400 border border-green-600/40"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
 
-              <button
-                onClick={() => setActiveProject(null)}
-                className="mt-8 px-6 py-3 rounded-xl bg-primary text-black font-semibold"
-              >
-                Close
-              </button>
+              <p className="text-sm text-muted mb-4">{active.overview}</p>
+
+              <div className="space-y-3 text-sm">
+                <div>
+                  <h4 className="font-semibold mb-1">Problems</h4>
+                  <ul className="list-disc list-inside space-y-1">
+                    {active.problems?.map((p) => (
+                      <li key={p}>{p}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold mb-1">Solutions</h4>
+                  <ul className="list-disc list-inside space-y-1">
+                    {active.solutions?.map((s) => (
+                      <li key={s}>{s}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                {active.outcome && (
+                  <div>
+                    <h4 className="font-semibold mb-1">Outcome</h4>
+                    <p>{active.outcome}</p>
+                  </div>
+                )}
+              </div>
             </motion.div>
           </motion.div>
         )}

@@ -17,9 +17,9 @@ export const projects = [
     icon: Brain,
     tags: ["PyTorch", "Diffusion", "Reconstruction"],
     overview:
-      "A generative diffusion approach for reconstructing medical images from degraded inputs—prioritizing anatomical continuity and stable training.",
+      "A generative diffusion approach for reconstructing medical images from degraded inputs, prioritizing anatomical continuity and stable training.",
     problems: [
-      "Noisy / incomplete scans can erase fine structure.",
+      "Noisy or incomplete scans can erase fine structure.",
       "GAN-style approaches can be unstable and inconsistent.",
       "Reconstruction must preserve edges without amplifying artifacts.",
     ],
@@ -29,8 +29,9 @@ export const projects = [
       "Focused evaluation on structural clarity and artifact suppression.",
     ],
     outcome:
-      "Improved perceived structural fidelity versus simple interpolation baselines, demonstrating diffusion’s fit for reconstruction workflows.",
+      "Improved structural fidelity versus interpolation baselines, demonstrating diffusion's suitability for reconstruction workflows.",
   },
+
   {
     id: "rl-trading",
     title: "Q-Learning Trading Platform",
@@ -40,9 +41,9 @@ export const projects = [
     overview:
       "A reinforcement learning system that learns trading actions from market state transitions, paired with a realistic backtesting harness.",
     problems: [
-      "Markets are non-stationary—models overfit easily.",
+      "Markets are non-stationary and models overfit easily.",
       "Backtests can lie if execution assumptions are unrealistic.",
-      "Agents can ‘win’ by over-trading or exploiting leakage.",
+      "Agents can 'win' by over-trading or exploiting leakage.",
     ],
     solutions: [
       "Built a backtesting framework with strict train/test separation.",
@@ -50,29 +51,31 @@ export const projects = [
       "Separated signal logic from execution logic to avoid leakage.",
     ],
     outcome:
-      "Produced a disciplined evaluation pipeline and clearer insight into RL behavior under noisy financial dynamics.",
+      "A disciplined evaluation pipeline with clearer insight into RL behavior under noisy financial dynamics.",
   },
+
   {
     id: "xgboost-trading",
     title: "XGBoost Trading Signal Pipeline",
     category: "AI/ML",
     icon: LineChart,
-    tags: ["XGBoost", "Feature engineering", "Position sizing"],
+    tags: ["XGBoost", "Feature Engineering", "Position Sizing"],
     overview:
       "A supervised learning pipeline for market signal prediction with position sizing logic designed around risk awareness.",
     problems: [
       "Signal prediction is fragile under regime changes.",
-      "High accuracy doesn’t guarantee profitable execution.",
+      "High accuracy doesn't guarantee profitable execution.",
       "Position sizing can dominate outcomes more than the signal itself.",
     ],
     solutions: [
       "Engineered features with emphasis on generalization.",
-      "Evaluated using trading-aware metrics (not just accuracy).",
+      "Evaluated using trading-aware metrics, not just accuracy.",
       "Integrated position sizing rules to control exposure.",
     ],
     outcome:
-      "A more realistic ML-to-execution workflow that highlighted where models break—and how risk controls stabilize behavior.",
+      "A more realistic ML-to-execution workflow that highlights where models break and how risk controls stabilize behavior.",
   },
+
   {
     id: "genre-engine",
     title: "AI Genre Suggestion Engine",
@@ -92,6 +95,7 @@ export const projects = [
     outcome:
       "Reliable predictions with transparent reasoning—easy to tune and communicate.",
   },
+
   {
     id: "landcover",
     title: "Comparative Land Cover Classification",
@@ -111,12 +115,13 @@ export const projects = [
     outcome:
       "Clear land-use change narratives suitable for environmental monitoring and reporting.",
   },
+
   {
     id: "airbnb-crime",
     title: "Urban Crime & Airbnb Spatial Autocorrelation",
     category: "GIS",
     icon: Map,
-    tags: ["QGIS", "Python", "Spatial statistics"],
+    tags: ["QGIS", "Python", "Spatial Statistics"],
     overview:
       "A spatial analysis exploring localized relationships between short-term rentals and crime patterns using autocorrelation methods.",
     problems: [
@@ -130,12 +135,13 @@ export const projects = [
     outcome:
       "More defensible insights than simple correlation—showing where spatial context changes the story.",
   },
+
   {
     id: "arsenic",
     title: "Soil Arsenic Modeling & Risk Mapping",
     category: "GIS",
     icon: ShieldAlert,
-    tags: ["Interpolation", "Risk mapping", "Environmental analysis"],
+    tags: ["Interpolation", "Risk Mapping", "Environmental Analysis"],
     overview:
       "Spatial interpolation and risk visualization to identify high-risk contaminant zones for clearer decision-making.",
     problems: [
@@ -149,14 +155,15 @@ export const projects = [
     outcome:
       "A risk communication artifact that translates complex spatial uncertainty into usable guidance.",
   },
+
   {
     id: "emergency-locator",
     title: "Emergency Map Locator",
     category: "GIS",
     icon: Map,
-    tags: ["GIS tool", "Spatial queries", "UX clarity"],
+    tags: ["GIS Tool", "Spatial Queries", "UX Clarity"],
     overview:
-      "A GIS-based locator concept for quickly pinpointing emergency services relative to a user’s location.",
+      "A GIS-based locator concept for quickly pinpointing emergency services relative to a user's location.",
     problems: [
       "Emergency UX must be fast and unambiguous.",
       "Spatial queries must be reliable under edge cases.",
@@ -168,6 +175,7 @@ export const projects = [
     outcome:
       "A practical GIS concept emphasizing reliability and speed over feature bloat.",
   },
+
   {
     id: "unix-shell",
     title: "Custom Unix Shell",
@@ -187,12 +195,13 @@ export const projects = [
     outcome:
       "Stronger systems intuition—especially around process lifecycle and Linux execution semantics.",
   },
+
   {
     id: "dbms-engine",
     title: "DBMS Storage Engine",
     category: "Systems",
     icon: Database,
-    tags: ["Storage", "Data structures", "Performance"],
+    tags: ["Storage", "Data Structures", "Performance"],
     overview:
       "Core storage logic and data management structures for a database system—focused on access patterns and correctness.",
     problems: [
@@ -206,12 +215,13 @@ export const projects = [
     outcome:
       "A grounded understanding of how databases actually move and organize data beneath abstractions.",
   },
+
   {
     id: "library-system",
     title: "Library Management System",
     category: "Software",
     icon: BookOpen,
-    tags: ["CRUD", "Data modeling", "Maintainability"],
+    tags: ["CRUD", "Data Modeling", "Maintainability"],
     overview:
       "A practical system for tracking inventory and users—built with clean data modeling and maintainable logic.",
     problems: [
@@ -225,12 +235,13 @@ export const projects = [
     outcome:
       "A stable foundation project that reinforced clean architecture habits.",
   },
+
   {
     id: "recipe-site",
     title: "Recipe Website",
     category: "Software",
     icon: Utensils,
-    tags: ["UI", "Content structure", "Searchable data"],
+    tags: ["UI", "Content Structure", "Searchable Data"],
     overview:
       "A recipe platform for storing instructions and substitutions with emphasis on readable structure and usability.",
     problems: [
@@ -242,6 +253,6 @@ export const projects = [
       "Organized substitutions as first-class data, not footnotes.",
     ],
     outcome:
-      "A user-friendly content system that strengthened practical UI + data organization skills.",
+      "A user-friendly content system that strengthened practical UI and data organization skills.",
   },
 ];

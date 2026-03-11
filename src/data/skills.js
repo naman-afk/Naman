@@ -1,87 +1,105 @@
-export const skills = {
-  "AI & Machine Learning": [
-    "Generative AI",
-    "Multi-Agent Systems",
-    "AI Observability",
-    "PyTorch",
-    "Scikit-learn",
-    "Reinforcement Learning",
-    "Feature Engineering",
-    "Model Evaluation",
-    "Experiment Tracking",
-  ],
+export const skills = [
+  {
+    category: "AI & Machine Learning",
+    items: [
+      "Generative AI",
+      "Diffusion Models",
+      "Reinforcement Learning",
+      "PyTorch",
+      "Scikit-learn",
+      "Feature Engineering",
+      "Model Evaluation",
+      "Experiment Tracking",
+    ],
+  },
 
-  "Geospatial & Remote Sensing": [
-    "QGIS",
-    "ArcGIS Pro",
-    "ArcGIS Online",
-    "ENVI",
-    "Google Earth Engine",
-    "Landsat & MODIS Processing",
-    "Spatial Statistics",
-    "Kernel Density Estimation",
-    "Interpolation & Suitability Modeling",
-  ],
+  {
+    category: "Geospatial & Remote Sensing",
+    items: [
+      "QGIS",
+      "ArcGIS Pro",
+      "ArcGIS Online",
+      "Google Earth Engine",
+      "Landsat & MODIS Processing",
+      "Spatial Statistics",
+      "Interpolation & Suitability Modeling",
+    ],
+  },
 
-  "Back-End & Systems": [
-    "C",
-    "C++",
-    "Python",
-    "Haskell",
-    "SQL",
-    "Rust",
-    "Multithreading",
-    "ARIES Logging",
-    "Linux Systems Programming",
-  ],
+  {
+    category: "Back-End & Systems",
+    items: [
+      "C",
+      "C++",
+      "Python",
+      "Haskell",
+      "SQL",
+      "Rust",
+      "Multithreading",
+      "Linux Systems Programming",
+    ],
+  },
 
-  "Front-End & APIs": [
-    "React",
-    "TypeScript",
-    "JavaScript",
-    "HTML/CSS",
-    "Responsive Web Design",
-    "REST APIs",
-  ],
+  {
+    category: "Front-End & APIs",
+    items: [
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "HTML/CSS",
+      "REST APIs",
+      "Responsive Web Design",
+    ],
+  },
 
-  "Tools & Platforms": [
-    "Git",
-    "Docker",
-    "Linux",
-    "Azure (Cloud)",
-    "Power BI",
-    "Microsoft 365",
-    "SharePoint",
-    "Teams",
-  ],
+  {
+    category: "Tools & Platforms",
+    items: [
+      "Git",
+      "Docker",
+      "Linux",
+      "Azure",
+      "Power BI",
+      "Microsoft 365",
+      "SharePoint",
+      "Teams",
+    ],
+  },
 
-  "Design & UX": [
-    "Figma",
-    "Design Systems",
-    "Auto Layout",
-    "Prototyping",
-    "Wireframing",
-    "Typography",
-    "Usability Testing",
-  ],
+  {
+    category: "Design & UX",
+    items: [
+      "Figma",
+      "Design Systems",
+      "Prototyping",
+      "Wireframing",
+      "Typography",
+      "Usability Testing",
+    ],
+  },
 
-  "Testing & Quality": [
-    "Manual & Automated Testing",
-    "Regression Testing",
-    "Edge-Case Identification",
-  ],
+  {
+    category: "Testing & Quality",
+    items: [
+      "Manual Testing",
+      "Automated Testing",
+      "Regression Testing",
+      "Edge-Case Identification",
+    ],
+  },
 
-  "Languages": [
-    "English (Native)",
-    "German (Fluent)",
-    "Punjabi",
-    "Hindi",
-  ],
+  {
+    category: "Languages",
+    items: ["English (Native)", "German (Fluent)", "Punjabi", "Hindi"],
+  },
 
-  "Professional Skills": [
-    "Clear Technical Communication",
-    "Methodical Documentation",
-    "Collaborative Problem Solving",
-    "Technology Management",
-  ],
-};
+  {
+    category: "Professional Skills",
+    items: [
+      "Technical Communication",
+      "Methodical Documentation",
+      "Collaborative Problem Solving",
+      "Technology Management",
+    ],
+  },
+];

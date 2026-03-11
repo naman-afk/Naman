@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import FloatingNav from "./components/FloatingNav";
 import TopoBackground from "./components/TopoBackground";
+import SectionWrapper from "./components/SectionWrapper";
 
 import Hero from "./sections/Hero";
 import About from "./sections/About";
@@ -20,16 +20,35 @@ export default function App() {
   }, [theme]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground texture-overlay">
+    <div className="min-h-screen bg-background text-foreground texture-overlay relative">
       <TopoBackground isAltitude={theme === "altitude"} />
-      <FloatingNav theme={theme} setTheme={setTheme} />
 
       <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Hobbies />
-      <Contact />
+
+      <div className="max-w-7xl mx-auto px-6">
+
+        <SectionWrapper title="About Me" sectionNum="01" defaultOpen={false}>
+          <About />
+        </SectionWrapper>
+
+        <SectionWrapper title="Skills" sectionNum="02" defaultOpen={false}>
+          <Skills />
+        </SectionWrapper>
+
+        <SectionWrapper title="Projects" sectionNum="03" defaultOpen={false}>
+          <Projects />
+        </SectionWrapper>
+
+        <SectionWrapper title="Outside of Work" sectionNum="04" defaultOpen={false}>
+          <Hobbies />
+        </SectionWrapper>
+
+        <SectionWrapper title="Get in Touch" sectionNum="05" defaultOpen={false}>
+          <Contact />
+        </SectionWrapper>
+
+      </div>
+
       <Footer />
     </div>
   );
